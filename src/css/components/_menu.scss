@@ -1,0 +1,57 @@
+/**
+ * _menu.scss
+ *
+ * @author Johannes Braun <johannes.braun@hannenz.de>
+ * @package schrodi-pms
+ */
+.main-nav {
+
+	background-color:#fff;
+	// height:$header-height;
+
+	ul {
+		max-width:$inner-width;
+		margin:0 auto;
+		list-style-type:none;
+		padding-right:1.5rem;
+		@include media ($medium-and-up) {
+			padding-right:0;
+		}
+	}
+
+	li {
+		display:inline-block;
+		margin-left: 1em;
+		@include media ($medium-and-up) {
+			margin-left: 2em;
+		}
+		@include media ($large-and-up) {
+			margin-left: 2em;
+		}
+	}
+	
+	a {
+		color:$blue;
+		text-decoration:none;
+		text-transform:uppercase;
+		line-height:$header-height - 1px;
+		display:inline-block;
+		position:relative;
+
+		&::after {
+			content:'';
+			position:absolute;
+			bottom:25%;
+			left:50%;
+			transform:translateX(-50%);
+			width:0%;
+			transition:150ms;
+			border-bottom:2px solid $blue;
+		}
+
+		&:hover::after {
+			width:100%;
+		}
+	}
+}
+

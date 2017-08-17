@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+body {
+	font-family:"Noto Sans", sans-serif;
+	@include type-setting(0);
+	font-weight:normal;
+	font-style:normal;
+	font-size:14px;
+	@include media ($medium-and-up) {
+		font-size:16px;
+	}
+	@include media ($large-and-up) {
+		font-size:18px;
+	}
+	color:$text-color;
+}
+
+.headline {
+	@include type-setting(1);
+	border-top:5px solid $blue;
+	text-transform:uppercase;
+	max-width:12em;
+	padding-top:1rem;
+	margin-bottom:$base-line-height;
+}
+
+.title-headline {
+	@include type-setting(1, 1);
+	@include media($medium-and-up) {
+		@include type-setting(2,1);
+	}
+	&__title {
+		display:inline-block;
+		vertical-align:middle;
+		margin-right:.25em;
+		text-transform: uppercase;
+	}
+	&__accented {
+		color:$blue;
+		min-width:3em;
+		min-height:1em;
+		display:inline-block;
+		vertical-align: middle;
+		text-transform: uppercase;
+	}
+	&__subline {
+		color:$grey;
+		min-height:1em;
+	}
+}
+
+p {
+	margin-bottom:$base-line-height;
+}
+
+.text-container {
+
+	margin:$base-line-height 0;
+}
+
+.text-container, .portfolio {
+	ul {
+		margin:$base-line-height 0;
+		list-style:none;
+
+		li {
+			padding-left:20px;
+			position:relative;
+			margin-bottom:0.5 * $base-line-height;
+			&::before {
+				content:'';
+				position:absolute;
+				left:0;
+				top:3px;
+				@include triangle(14px 12px, $grey,  right);
+			}
+		}
+	}
+}
+
+.accented-textbox {
+	border-left:16px solid $blue;
+	padding:0.5*$base-line-height 0 0.5*$base-line-height 20px;
+	position:relative;
+	left:-36px;
+	margin-top:2 * $base-line-height;
+	margin-bottom:$base-line-height;
+	@include type-setting(1, 1);
+	font-style:italic;
+	color:$blue;
+}
+

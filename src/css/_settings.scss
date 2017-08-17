@@ -1,0 +1,22 @@
+/**
+ * _settings.scss
+ * @author Johannes Braun <johannes.braun@hannenz.de>
+ * @package schrodi-pms
+ */
+
+
+$blue:#054d87;
+$grey:#b0b0b0;
+$light-grey:#d8d9da;
+$text-color:#303036;
+
+$inner-width: 800px;
+$header-height: 70px;
+
+$bp1: 480px;
+$bp2: 800px;
+
+$small:         new-breakpoint(max-width $bp1 - 1);
+$medium-and-up: new-breakpoint(min-width $bp1);
+$medium:        new-breakpoint(min-width $bp1 max-width $bp2 - 1);
+$large-and-up:  new-breakpoint(min-width $bp2);

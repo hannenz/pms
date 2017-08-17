@@ -1,0 +1,53 @@
+// $slideshow-height:20 * $base-line-height;
+$slideshow-height:45vh;
+
+.slideshow {
+	list-style:none;
+	width:100%;
+	height:$slideshow-height;
+	overflow:hidden;
+	border-bottom:2px solid $blue;
+}
+.slideshow__slide {
+	position:relative;
+	width:100%;
+	height:$slideshow-height;
+	overflow:hidden;
+
+}
+.slideshow__image {
+	display:block;	
+	min-width:100%;
+	min-height:100%;
+	width:auto;
+	height:auto;
+	
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+}
+
+.slideshow {
+	position:relative;
+	&::before, &::after {
+		display:none;
+		content:'';
+		position:absolute;
+		width:100%;
+		height:60px;
+		left:0;
+		background-image:url('../img/curve.svg');
+		background-size:100% 100%;
+		background-repeat:no-repeat;
+		z-index:3;
+	}
+	&::before {
+		top:0;
+	}
+	&::after {
+		bottom:0;
+		transform:scale(-1, -1);
+	}
+}
+

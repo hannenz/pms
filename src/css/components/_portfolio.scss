@@ -1,0 +1,33 @@
+/**
+ * src/css/components/_portfolio.scss
+ *
+ * @author Johannes Braun <johannes.braun@hannenz.de>
+ * @package pms
+ */
+
+@include media ($medium-and-up) {
+	.portfolio {
+		display:flex;
+		justify-content:space-between;
+
+		&__column {
+			width:40%;
+			margin-top: $base-line-height;
+			margin-bottom:$base-line-height;
+		}
+
+		&__headline {
+			color:$blue;
+			@include type-setting(0, 1);
+		}
+
+		&:last-child {
+			.portfolio__column {
+				width:75%;
+				&:last-child {
+					width:0;
+				}
+			}
+		}
+	}
+}

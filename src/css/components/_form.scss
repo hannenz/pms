@@ -1,0 +1,75 @@
+/**
+ * src/css/components/form.scss
+ *
+ * @author Johannes Braun <johannes.braun@hannenz.de>
+ * @package pms
+ */
+
+.contact-form {
+	max-width:40rem;
+	label {
+		color:$grey;
+	}
+
+	textarea {
+		min-height:6 * $base-line-height;
+	}
+}
+
+.form-field {
+	margin-bottom:$base-line-height;
+}
+
+#{$all-text-inputs} {
+	outline:0;
+	border:0;
+	background-color:$light-grey;
+	padding:2px 4px;
+	border-radius:0;
+	color:$text-color;
+	width:100%;
+	@include type-setting(0);
+
+}
+
+@include media ($medium-and-up) {
+	.row {
+		@include row();
+		> .form-field  {
+			@include span-columns(6);
+		}
+	}
+}
+
+.form-field--submit {
+	overflow:hidden;
+
+	button {
+		background-color:$blue;
+		border:0;
+		outline:0;
+		@include type-setting(0);
+		color:#fff;
+		text-align:center;
+		padding:0.5em  1em;
+		float:right;
+		transition:200ms;
+		&:hover {
+			background-color:lighten($blue, 5%);
+		}
+	}
+}
+
+.message--negative {
+	color:#c00000;
+}
+
+.contact .sidebar {
+	padding-left:$gutter;
+	
+	img {
+		display:block;
+		width:75%;
+		margin:0 auto $base-line-height auto;
+	}
+}

@@ -1,0 +1,67 @@
+/**
+ * _footer.scss
+ *
+ * @author Johannes Braun <johannes.braun@hannenz.de>
+ * @package schrodi-pms
+ */
+
+
+.main-footer {
+	background-color:$blue;
+	color:#fff;
+	min-height:6 * $base-line-height;
+	padding-top:$base-line-height;
+	padding-bottom:2 * $base-line-height;
+	padding-left:1.5rem;
+	padding-right:1.5rem;
+
+	a {
+		color:#fff;
+		text-decoration:underline;
+		&:hover {
+			text-decoration:none;
+		}
+	}
+
+	.inner {
+		max-width:$inner-width;
+		margin:0 auto;
+	}
+
+	.footer-column {
+		color:#fff;
+	}
+}
+
+
+
+@include media ($medium-and-up) {
+	.main-footer {
+		padding-left:0;
+		padding-right:0;
+	}
+
+	.inner {
+		display:flex;
+		justify-content:space-between;
+	}
+
+	.main-footer__column {
+		min-height:$base-line-height;
+
+		&:first-child {
+			width:25%;
+		}
+
+		&:nth-child(2) {
+			align-self:flex-end;
+		}
+
+		&:last-child {
+			width:10%;
+			align-self:flex-end;
+		}
+	}
+}
+
+

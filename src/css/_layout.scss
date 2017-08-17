@@ -1,0 +1,87 @@
+/**
+ * _layout.scss
+ *
+ * @author Johannes Braun <johannes.braun@hannenz.de>
+ * @package schrodi-pms
+ */
+
+body {
+	max-width:1920px;
+	width:100vw;
+	min-height:100vh;
+	overflow-x:hidden;
+}
+
+.main-header {
+	width:100%;
+	// min-height:100px;
+}
+
+.section {
+
+	.main-content {
+		max-width:$inner-width;
+		margin:0 auto;
+	}
+	&:not(#map) {
+		padding: 1.5 * $base-line-height  1.5rem;
+	}
+}
+
+.cmt-layout pre {
+	margin:1rem 0 2rem;
+	border-left:14px solid yellow;
+	padding-left:1rem;
+	color:#808080;
+}
+
+.inner-bound {
+	max-width:$inner-width;
+	margin:0 auto;
+}
+
+.container {
+
+	@include row();
+
+	&.contact {
+
+		display:flex;
+		flex-direction:column;
+
+		.main-column {
+			order: 2;
+		}
+		.sidebar {
+			order: 1;
+		}
+	}
+}
+
+
+@include media ($large-and-up) {
+
+	.container.contact {
+		flex-direction:row;
+		.main-column {
+			@include span-columns(8);
+			order: 1;
+		}
+
+		.sidebar {
+			@include span-columns(4);
+			// transform:translateY(-3 * $base-line-height);
+			order: 2;
+		}
+	}
+}
+
+.main-content {
+	padding:0 0.5rem;
+}
+@include media ($large-and-up) {
+	.main-content {
+		padding:0;
+	}
+}
+

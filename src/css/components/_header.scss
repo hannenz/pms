@@ -1,0 +1,44 @@
+/**
+ * _layout.scss
+ *
+ * @author Johannes Braun <johannes.braun@hannenz.de>
+ * @package schrodi-pms
+ */
+body {
+	padding-top:$header-height;
+}
+
+.main-header {
+	background-size:cover;
+	background-position:center center;
+	background-repeat:no-repeat;
+	position:fixed;
+	top:0;
+	width:100vw;
+	height:$header-height;
+	background-color:#fff;
+	z-index:1;
+	border-bottom:1px solid $blue;
+
+	.inner-bound {
+		display:flex;
+		align-items:center;
+		padding:0 0.5rem;
+		@iclude media($large-and-up) {
+			padding:0 0;
+		}
+	}
+
+	.logo {
+		
+		max-width:5rem;
+		margin-right:auto;
+		transform: translateY(3px);
+
+
+		@include media($large-and-up) {
+			max-width:10rem;
+		}
+	}
+}
+
